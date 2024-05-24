@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.productAPIExtended.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_basket"
+            app:destination="@id/navigation_basket" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_description"
+            app:destination="@id/navigation_description" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_basket"
+        android:name="com.example.productAPIExtended.ui.dashboard.BasketFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_basket">
+        <action
+            android:id="@+id/action_navigation_basket_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_basket_to_navigation_payment"
+            app:destination="@id/navigation_payment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_description"
+        android:name="com.example.productAPIExtended.ui.notifications.DescriptionFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications">
+        <action
+            android:id="@+id/action_navigation_description_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_payment"
+        android:name="com.example.productAPIExtended.ui.payment.PaymentFragment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment">
+        <action
+            android:id="@+id/action_navigation_payment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.productAPIExtended.authentification.LoginFragment"
+        android:label="Authentification"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_registration"
+            app:destination="@id/navigation_registration" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registration"
+        android:name="com.example.productAPIExtended.authentification.RegistrationFragment"
+        android:label="Authentification"
+        tools:layout="@layout/fragment_registretion">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_registration"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
